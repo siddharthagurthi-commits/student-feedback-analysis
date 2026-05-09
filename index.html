@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎓 Student Feedback Analyzer</h1>
+
+    <form action="/predict" method="post">
+        <textarea name="feedback" placeholder="Enter student feedback here..." required></textarea>
+        <br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result">
+            Predicted Sentiment: {{ prediction }}
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
